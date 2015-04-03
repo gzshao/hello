@@ -1,0 +1,112 @@
+#########################################################################
+#
+# Generic System-dependent definitions.
+#
+# EDIT ACCORDING TO YOUR OWN NEEDS !!!
+#
+########################################################################
+
+#------------------------------------------------------------------------
+# if you have a GNU make it is better to set the MAKE variable to point
+# to gnu make
+#------------------------------------------------------------------------
+MAKE = make
+
+#------------------------------------------------------------------------
+# compilers & flags
+#------------------------------------------------------------------------
+CFLAGS = -DUSE_FONTS 
+CC     = gcc
+#LDLIB  = -ldl
+MATH   = -lm
+
+FFLAGS = -O
+FC     = f77
+
+
+#------------------------------------------------------------------------
+# X-libraries & include files
+#
+# for STATIC compilation one should add: -lpthread
+#------------------------------------------------------------------------
+X_LIB     = -L/usr/X11R6/lib -lXmu -lX11 -lXext
+X_INCDIR  = -I/usr/X11R6/include
+
+
+
+###
+### use EITHER THIS:
+###
+
+#-Possibility-1----------------------------------------------------------
+#
+# If you want to use your own libraries and include files,
+# then set *_LIB and *_INCDIR variables below accordingly:
+#
+#------------------------------------------------------------------------
+
+COMPILE_TCLTK = no
+COMPILE_MESA  = no
+
+#
+# Libraries
+#
+TK_LIB      = -L/usr/lib -ltk8.5
+TCL_LIB     = -L/usr/lib -ltcl8.5
+GLU_LIB     = -L/usr/X11R6/lib -lGLU
+GL_LIB      = -L/usr/X11R6/lib -lGL
+
+# Guozheng's FFTW3, MESCHACH lib
+MESCHACH_LIB = -L/opt/local/lib -lmeschach
+FFTW3_LIB = -L/opt/local/lib -lfftw3
+#
+# Include directories
+#
+TCL_INCDIR  = 
+TK_INCDIR   = 
+GL_INCDIR   = 
+
+#------------------------------------------------------------------------
+
+
+###
+### or THAT:
+###
+
+#-Possibility-2---------------------------------------------------------- 
+#
+# XCRYSDEN package may contain the tcl, tk & Mesa sources !!!
+# If you would like to compile and use these then uncomment below lines and
+# comment lines "Possibility-1" (see above).
+#
+#------------------------------------------------------------------------
+
+#COMPILE_TCLTK = yes
+#COMPILE_MESA  = yes
+# 
+# #
+# # Do we want a shared library version of Tcl/Tk/Mesa or static?
+# # If we want shared then set the following flags to: --enable-shared
+# # else set the following flag to: --disable-shared
+# #
+#TCLTK_OPTIONS      = --enable-shared
+#MESA_TARGET        = linux
+# 
+# #
+# # Libraries (dynamic loading)
+# #           for shared linking the libraries postfix should be .so
+# #           for static linking the libraries postfix should be .a
+# #
+#TCL_LIB     = $(TOPDIR)/external/lib/libtcl$(TCL_VER2).so
+#TK_LIB      = $(TOPDIR)/external/lib/libtk$(TCL_VER2).so
+#GLU_LIB     = $(TOPDIR)/external/lib/libGLU.so
+#GL_LIB      = $(TOPDIR)/external/lib/libGL.so
+# 
+# #
+# # Include directories
+# #
+#TCL_INCDIR  = -I$(TOPDIR)/external/src/tcl$(TCL_VER3)/generic
+#TK_INCDIR   = -I$(TOPDIR)/external/src/tk$(TCL_VER3)/generic
+#GL_INCDIR   = -I$(TOPDIR)/external/include 
+
+#------------------------------------------------------------------------

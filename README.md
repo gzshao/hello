@@ -13,3 +13,7 @@ li Uses R
 li Nine courses 
 li Goes from raw data to data products
 *** Data Science Specialization 
+
+$ y=x+1 $
+
+$$ Y^2 = x^3-1 $$

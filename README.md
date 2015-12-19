@@ -4,7 +4,7 @@ b=2
 This is a test
 # add it a second time
 
-### Data Science Specialization 
+## Data Science Specialization 
 
 * Uses R 
 * Nine courses 
